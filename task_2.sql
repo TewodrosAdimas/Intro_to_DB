@@ -1,10 +1,3 @@
-import mysql.connector
-connection = mysql.connector.connect(
-            host='localhost',
-            user='root',
-            password='Tedi@1234'
-        )
-
 USE alx_book_store;
 
 
