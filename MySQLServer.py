@@ -15,5 +15,5 @@ try:
         cursor.close()
         connection.close()
 
-except Error as e:
-    print(f"Error: {e}")
+except mysql.connector.Error:
+    print("Error")
