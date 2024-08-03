@@ -1,19 +1,19 @@
-SET @dbname = 'alx_book_store';
+SET @DBNAME = 'alx_book_store';
 
-SET @table_name = (
-    SELECT table_name
-    FROM information_schema.tables
-    WHERE table_schema = @dbname
-    AND table_name = 'books'
+SET @TABLE_NAME = (
+    SELECT TABLE_NAME
+    FROM INFORMATION_SCHEMA.TABLES
+    WHERE TABLE_SCHEMA = @DBNAME
+    AND TABLE_NAME = 'books'
 );
 
-SET @sql_query = CONCAT(
-    'SELECT column_name, column_type, is_nullable, column_default, column_key, extra ',
-    'FROM information_schema.columns ',
-    'WHERE table_schema = "', @dbname, '" ',
-    'AND table_name = "', @table_name, '"'
+SET @SQL_QUERY = CONCAT(
+    'SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_DEFAULT, COLUMN_KEY, EXTRA ',
+    'FROM INFORMATION_SCHEMA.COLUMNS ',
+    'WHERE TABLE_SCHEMA = "', @DBNAME, '" ',
+    'AND TABLE_NAME = "', @TABLE_NAME, '"'
 );
 
-PREPARE stmt FROM @sql_query;
-EXECUTE stmt;
-DEALLOCATE PREPARE stmt;
+PREPARE STMT FROM @SQL_QUERY;
+EXECUTE STMT;
+DEALLOCATE PREPARE STMT;
